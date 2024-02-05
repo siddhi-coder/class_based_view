@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from classbasedapp.views import StudentRetrieve , StudentCreate
 
+app_name = "classbasedapp"
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("" ,StudentRetrieve.as_view(),name='StudentRetrieve'),
+    path("StudentCreate/" ,StudentCreate.as_view(),name='StudentCreate'),
 ]
